@@ -9,3 +9,13 @@ export const getUsers = async () => {
     throw err;
   }
 };
+
+export const getUserById = async (userId: number) => {
+  try {
+    const { data } = await api.get(`/users/${userId}`);
+    return data;
+  } catch (error) {
+    const err = new Error("Failed to get user");
+    throw err;
+  }
+};

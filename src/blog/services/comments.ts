@@ -1,6 +1,6 @@
 import { api } from "./config";
 
-export const GetCommentsByPostId = async (postId: number) => {
+export const getCommentsByPostId = async (postId: number) => {
   try {
     const { data } = await api.get(`/posts/${postId}/comments`);
     return data;

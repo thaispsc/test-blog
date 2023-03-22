@@ -1,5 +1,5 @@
 import Post from "@/blog/pages/Post";
-import { GetCommentsByPostId } from "@/blog/services/comments";
+import { getCommentsByPostId } from "@/blog/services/comments";
 import { getPostById } from "@/blog/services/posts";
 import NextError from "@/lib/components/Error";
 
@@ -22,7 +22,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 
   try {
     const post = await getPostById(postId);
-    const comments = await GetCommentsByPostId(postId);
+    const comments = await getCommentsByPostId(postId);
     return {
       props: {
         error: null,

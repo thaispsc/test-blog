@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar color="secondary">
+    <AppBar color="secondary" position="static">
       <Container maxWidth="md">
         <Toolbar
           sx={{

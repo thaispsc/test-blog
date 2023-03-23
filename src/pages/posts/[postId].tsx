@@ -49,11 +49,10 @@ type PageProps = {
 };
 
 export default function Page({ error, post, comments }: PageProps) {
-  const commentsArray = comments || [];
   return (
     <>
       {error && <NextError message={error.message} />}
-      {post && <Post post={post} comments={commentsArray} />}
+      {post && comments && <Post post={post} comments={comments} />}
     </>
   );
 }

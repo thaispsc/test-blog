@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import { Box, Container, Typography, Grid, useMediaQuery } from "@mui/material";
 import Header from "../ui/header/Header";
-import UserIcon from "../ui/users/UserIcon";
+import UserIcon from "../../lib/components/UserIcon";
 import { Theme } from "@mui/system";
 
 interface UserProps {

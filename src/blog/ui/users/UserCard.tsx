@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Typography, Card, CardContent, Link } from "@mui/material";
-import UserIcon from "./UserIcon";
+import UserIcon from "../../../lib/components/UserIcon";
 
 interface UserCardProps {
   user: User;

@@ -1,14 +1,9 @@
 import React from "react";
 import { NextPage } from "next";
-import {
-  Box,
-  Container,
-  Typography,
-  Card,
-  CardContent,
-  Link,
-} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Header from "../ui/header/Header";
+import PostCard from "../ui/posts/PostCard";
+import { CustomDivider } from "@/lib/components/CustomDivider";
 
 interface PostsProps {
   posts: Post[];
@@ -19,16 +14,15 @@ const Posts: NextPage<PostsProps> = ({ posts }) => {
     <>
       <Header />
       <Container maxWidth="md">
+        <Typography variant="h1" marginTop={8} marginBottom={8} align="center">
+          Check Our Posts
+        </Typography>
         <Box>
           {posts.map((post) => (
-            <Link href={`/posts/${post.id}`} underline="none">
-              <Card sx={{ marginY: "16px" }}>
-                <CardContent>
-                  <Typography>{post.title}</Typography>
-                  <Typography>{post.body}</Typography>
-                </CardContent>
-              </Card>
-            </Link>
+            <>
+              <PostCard post={post} />
+              <CustomDivider />
+            </>
           ))}
         </Box>
       </Container>

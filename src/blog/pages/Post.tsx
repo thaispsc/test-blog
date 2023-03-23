@@ -69,6 +69,7 @@ const Post: NextPage<PostProps> = ({ post, comments }) => {
             <Typography variant="h2">Comments</Typography>
             {comments.map((comment) => (
               <Card
+                key={comment.id}
                 variant="outlined"
                 sx={{ marginY: "16px", backgroundColor: "#EDEDED" }}
               >

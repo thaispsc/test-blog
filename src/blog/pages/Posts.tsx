@@ -19,10 +19,10 @@ const Posts: NextPage<PostsProps> = ({ posts }) => {
         </Typography>
         <Box>
           {posts.map((post) => (
-            <>
+            <Box key={post.id}>
               <PostCard post={post} />
               <CustomDivider />
-            </>
+            </Box>
           ))}
         </Box>
       </Container>

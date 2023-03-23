@@ -13,7 +13,7 @@ export const UserCard = ({ user }: UserCardProps) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          paddingX: "32px",
+          paddingX: "16px",
           "&:hover": {
             boxShadow: "4px 4px 4px 2px rgba(0, 0, 0, 0.2)",
           },
@@ -22,11 +22,20 @@ export const UserCard = ({ user }: UserCardProps) => {
           },
         }}
       >
-        <UserIcon />
+        <UserIcon size={60} />
         <CardContent>
-          <Typography>Username: {user.username}</Typography>
-          <Typography>Name: {user.name}</Typography>
-          <Typography>Email: {user.email}</Typography>
+          <Typography>
+            <span style={{ fontWeight: "bold" }}>Username: </span>
+            {user.username}
+          </Typography>
+          <Typography>
+            <span style={{ fontWeight: "bold" }}>Name: </span>
+            {user.name}
+          </Typography>
+          <Typography>
+            <span style={{ fontWeight: "bold" }}>Email: </span>
+            {user.email}
+          </Typography>
         </CardContent>
       </Card>
     </Link>

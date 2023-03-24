@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import { Box, Container, Typography } from "@mui/material";
 import Header from "../ui/header/Header";
 import PostCard from "../ui/post-card/PostCard";
-import { CustomDivider } from "@/lib/components/CustomDivider";
 
 interface PostsProps {
   posts: Post[];
@@ -19,10 +18,7 @@ const Posts: NextPage<PostsProps> = ({ posts }) => {
         </Typography>
         <Box>
           {posts.map((post) => (
-            <Box key={post.id}>
-              <PostCard post={post} />
-              <CustomDivider />
-            </Box>
+            <PostCard post={post} key={post.id} />
           ))}
         </Box>
       </Container>

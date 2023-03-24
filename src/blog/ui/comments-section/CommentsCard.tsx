@@ -14,7 +14,6 @@ const CommentsCard = ({ comment }: CommentsCardProps) => {
 
   return (
     <Card
-      key={comment.id}
       variant="outlined"
       sx={{ marginY: "16px", backgroundColor: "#EDEDED" }}
     >

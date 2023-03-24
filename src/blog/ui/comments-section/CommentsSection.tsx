@@ -11,7 +11,7 @@ const CommentsSection = ({ comments }: CommentsSectionProps) => {
     <Box marginTop={5}>
       <Typography variant="h2">Comments</Typography>
       {comments.map((comment) => (
-        <CommentsCard comment={comment} />
+        <CommentsCard comment={comment} key={comment.id} />
       ))}
     </Box>
   );

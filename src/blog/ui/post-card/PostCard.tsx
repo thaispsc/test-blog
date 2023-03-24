@@ -26,7 +26,11 @@ export const PostCard = ({ post }: PostCardProps) => {
     <>
       {isUserFetched && (
         <>
-          <Link href={`/posts/${post.id}`} underline="none" color="secondary">
+          <Link
+            href={`/posts/post/${post.id}`}
+            underline="none"
+            color="secondary"
+          >
             <Box marginY={4}>
               <Typography variant="h2" marginY={2}>
                 {post.title}

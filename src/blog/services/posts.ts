@@ -1,8 +1,10 @@
 import { api } from "./config";
 
-export const getPosts = async () => {
+export const getPosts = async (page: number, limit: number) => {
   try {
-    const { data } = await api.get("/posts?_embed=comments");
+    const { data } = await api.get(
+      `/posts?_embed=comments&_page=${page}&_limit=${limit}`
+    );
     return data;
   } catch (error) {
     const err = new Error("Failed to get posts list");

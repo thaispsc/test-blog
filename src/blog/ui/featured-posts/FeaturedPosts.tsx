@@ -45,7 +45,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
       </Grid>
       <Box display="flex" justifyContent="center" marginTop={4}>
         <Button variant="contained" color="info">
-          <Link href="/posts" underline="none">
+          <Link href="/posts/1" underline="none">
             <Typography
               color="secondary"
               textTransform="none"

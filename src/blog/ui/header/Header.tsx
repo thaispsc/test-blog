@@ -15,7 +15,7 @@ import IconButton from "@mui/material/IconButton";
 
 const PagesLinks = [
   { name: "Home", link: "/" },
-  { name: "Posts", link: "/posts" },
+  { name: "Posts", link: "/posts/1" },
   { name: "Users", link: "/users" },
 ];
 
@@ -82,7 +82,7 @@ const Header = () => {
                 </Link>
               </MenuItem>
               <MenuItem>
-                <Link href="/posts" underline="none">
+                <Link href="/posts/1" underline="none">
                   <Typography color="black">Posts</Typography>
                 </Link>
               </MenuItem>
@@ -94,7 +94,9 @@ const Header = () => {
             </Menu>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <Typography variant="h1">BLOG</Typography>
+            <Link href="/" underline="none">
+              <Typography variant="h1">BLOG</Typography>
+            </Link>
           </Box>
           <Box
             sx={{

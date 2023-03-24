@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Typography, Link, Box } from "@mui/material";
 import { getUserById } from "@/blog/services/users";
-import { getCommentsByPostId } from "@/blog/services/comments";
 import UserIcon from "../../../lib/components/UserIcon";
 import CommentsIcon from "@/lib/components/CommentsIcon";
 
@@ -11,7 +10,6 @@ interface PostCardProps {
 
 export const PostCard = ({ post }: PostCardProps) => {
   const [user, setUser] = useState<User>({} as User);
-  const [comments, setComments] = useState<Comment[]>([] as Comment[]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -19,11 +17,6 @@ export const PostCard = ({ post }: PostCardProps) => {
       setUser(userData);
     };
     fetchUser();
-    const fetchComments = async () => {
-      const commentsArray = await getCommentsByPostId(post.id);
-      setComments(commentsArray);
-    };
-    fetchComments();
   }, []);
 
   return (
@@ -39,7 +32,7 @@ export const PostCard = ({ post }: PostCardProps) => {
           </Box>
           <Box display="flex" gap={1}>
             <CommentsIcon />
-            <Typography>{comments.length} comments</Typography>
+            <Typography>{post.comments.length} comments</Typography>
           </Box>
         </Box>
       </Box>

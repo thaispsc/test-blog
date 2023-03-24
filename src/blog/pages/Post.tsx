@@ -8,10 +8,9 @@ import CommentsSection from "../ui/comments-section/CommentsSection";
 
 interface PostProps {
   post: Post;
-  comments: Comment[];
 }
 
-const Post: NextPage<PostProps> = ({ post, comments }) => {
+const Post: NextPage<PostProps> = ({ post }) => {
   const [user, setUser] = useState<User>({} as User);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const Post: NextPage<PostProps> = ({ post, comments }) => {
       {isUserFetched && (
         <Container maxWidth="md">
           <PostSection post={post} user={user} />
-          <CommentsSection comments={comments} />
+          <CommentsSection comments={post.comments} />
         </Container>
       )}
     </>

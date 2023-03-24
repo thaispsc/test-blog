@@ -1,5 +1,4 @@
 import Post from "@/blog/pages/Post";
-import { getCommentsByPostId } from "@/blog/services/comments";
 import { getPostById } from "@/blog/services/posts";
 import NextError from "@/lib/components/Error";
 
@@ -13,7 +12,6 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
       props: {
         error: new Error("invalid params: missing post id"),
         post: null,
-        comments: null,
       },
     };
   }
@@ -22,12 +20,10 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 
   try {
     const post = await getPostById(postId);
-    const comments = await getCommentsByPostId(postId);
     return {
       props: {
         error: null,
         post,
-        comments,
       },
     };
   } catch (e) {
@@ -36,7 +32,6 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
       props: {
         error,
         post: null,
-        comments: null,
       },
     };
   }
@@ -45,14 +40,13 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 type PageProps = {
   error: Error | null;
   post: Post | null;
-  comments: Comment[] | null;
 };
 
-export default function Page({ error, post, comments }: PageProps) {
+export default function Page({ error, post }: PageProps) {
   return (
     <>
       {error && <NextError message={error.message} />}
-      {post && comments && <Post post={post} comments={comments} />}
+      {post && <Post post={post} />}
     </>
   );
 }

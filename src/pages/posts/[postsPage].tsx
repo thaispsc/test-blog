@@ -3,14 +3,14 @@ import { getPosts } from "@/blog/services/posts";
 import NextError from "@/lib/components/Error";
 
 interface ServerSideProps {
-  params: { postsPage?: number };
+  params: { postsPage: number };
 }
 
 export const getServerSideProps = async ({ params }: ServerSideProps) => {
-  if (!params.postsPage || params.postsPage > 20) {
+  if (isNaN(params.postsPage) || params.postsPage > 20) {
     return {
       props: {
-        error: new Error("invalid params: missing post page"),
+        errorMessage: "Invalid params: missing valid posts page!",
         post: null,
       },
     };
@@ -21,7 +21,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const posts = await getPosts(postsPage, 5);
     return {
       props: {
-        error: null,
+        errorMessage: null,
         postsPage,
         posts,
       },
@@ -30,7 +30,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const error = e as Error;
     return {
       props: {
-        error,
+        errorMessage: error.message,
         postsPage: null,
         posts: null,
       },
@@ -39,15 +39,15 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 };
 
 type PageProps = {
-  error: Error | null;
+  errorMessage: string | null;
   posts: Post[] | null;
   postsPage: string;
 };
 
-export default function Page({ error, posts, postsPage }: PageProps) {
+export default function Page({ errorMessage, posts, postsPage }: PageProps) {
   return (
     <>
-      {error && <NextError message={error.message} />}
+      {errorMessage && <NextError message={errorMessage} />}
       {posts && <Posts posts={posts} page={postsPage} />}
     </>
   );

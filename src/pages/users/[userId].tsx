@@ -3,14 +3,14 @@ import { getUserById } from "@/blog/services/users";
 import NextError from "@/lib/components/Error";
 
 interface ServerSideProps {
-  params: { userId?: number };
+  params: { userId: number };
 }
 
 export const getServerSideProps = async ({ params }: ServerSideProps) => {
-  if (!params.userId) {
+  if (isNaN(params.userId)) {
     return {
       props: {
-        error: new Error("invalid params: missing user id"),
+        errorMessage: "Invalid params: missing valid user id!",
         user: null,
       },
     };
@@ -22,7 +22,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const user = await getUserById(userId);
     return {
       props: {
-        error: null,
+        errorMessage: null,
         user,
       },
     };
@@ -30,7 +30,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const error = e as Error;
     return {
       props: {
-        error,
+        errorMessage: error.message,
         user: null,
       },
     };
@@ -38,14 +38,14 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 };
 
 type PageProps = {
-  error: Error | null;
+  errorMessage: string | null;
   user: User | null;
 };
 
-export default function Page({ error, user }: PageProps) {
+export default function Page({ errorMessage, user }: PageProps) {
   return (
     <>
-      {error && <NextError message={error.message} />}
+      {errorMessage && <NextError message={errorMessage} />}
       {user && <User user={user} />}
     </>
   );

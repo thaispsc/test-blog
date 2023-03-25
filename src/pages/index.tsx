@@ -9,7 +9,7 @@ export const getServerSideProps = async () => {
     const users = await getUsers();
     return {
       props: {
-        error: null,
+        errorMessage: null,
         posts,
         users,
       },
@@ -18,7 +18,7 @@ export const getServerSideProps = async () => {
     const error = e as Error;
     return {
       props: {
-        error,
+        errorMessage: error.message,
         posts: null,
         users: null,
       },
@@ -27,15 +27,15 @@ export const getServerSideProps = async () => {
 };
 
 type PageProps = {
-  error: Error | null;
+  errorMessage: string | null;
   posts: Post[] | null;
   users: User[] | null;
 };
 
-export default function Home({ error, posts, users }: PageProps) {
+export default function Home({ errorMessage, posts, users }: PageProps) {
   return (
     <>
-      {error && <NextError message={error.message} />}
+      {errorMessage && <NextError message={errorMessage} />}
       {posts && users && <Blog posts={posts} users={users} />}
     </>
   );

@@ -7,7 +7,7 @@ export const getServerSideProps = async () => {
     const users = await getUsers();
     return {
       props: {
-        error: null,
+        errorMessage: null,
         users,
       },
     };
@@ -15,7 +15,7 @@ export const getServerSideProps = async () => {
     const error = e as Error;
     return {
       props: {
-        error,
+        errorMessage: error.message,
         users: null,
       },
     };
@@ -23,14 +23,14 @@ export const getServerSideProps = async () => {
 };
 
 type PageProps = {
-  error: Error | null;
+  errorMessage: string | null;
   users: User[] | null;
 };
 
-export default function Page({ error, users }: PageProps) {
+export default function Page({ errorMessage, users }: PageProps) {
   return (
     <>
-      {error && <NextError message={error.message} />}
+      {errorMessage && <NextError message={errorMessage} />}
       {users && <Users users={users} />}
     </>
   );

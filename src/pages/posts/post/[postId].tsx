@@ -3,14 +3,14 @@ import { getPostById } from "@/blog/services/posts";
 import NextError from "@/lib/components/Error";
 
 interface ServerSideProps {
-  params: { postId?: number };
+  params: { postId: number };
 }
 
 export const getServerSideProps = async ({ params }: ServerSideProps) => {
-  if (!params.postId) {
+  if (isNaN(params.postId)) {
     return {
       props: {
-        error: new Error("invalid params: missing post id"),
+        errorMessage: "Invalid params: missing valid post id!",
         post: null,
       },
     };
@@ -22,7 +22,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const post = await getPostById(postId);
     return {
       props: {
-        error: null,
+        errorMessage: null,
         post,
       },
     };
@@ -30,7 +30,7 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
     const error = e as Error;
     return {
       props: {
-        error,
+        errorMessage: error.message,
         post: null,
       },
     };
@@ -38,14 +38,14 @@ export const getServerSideProps = async ({ params }: ServerSideProps) => {
 };
 
 type PageProps = {
-  error: Error | null;
+  errorMessage: string | null;
   post: Post | null;
 };
 
-export default function Page({ error, post }: PageProps) {
+export default function Page({ errorMessage, post }: PageProps) {
   return (
     <>
-      {error && <NextError message={error.message} />}
+      {errorMessage && <NextError message={errorMessage} />}
       {post && <Post post={post} />}
     </>
   );

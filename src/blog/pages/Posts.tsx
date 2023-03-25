@@ -18,7 +18,14 @@ const Posts: NextPage<PostsProps> = ({ posts, page }) => {
         <Typography variant="h1" marginTop={8} marginBottom={8} align="center">
           Check Our Posts
         </Typography>
-        <Box>
+        <Box
+          sx={{
+            height: {
+              xs: 772,
+              sm: 676,
+            },
+          }}
+        >
           {posts.map((post) => (
             <PostCard post={post} key={post.id} />
           ))}

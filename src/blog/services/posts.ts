@@ -7,7 +7,7 @@ export const getPosts = async (page: number, limit: number) => {
     );
     return data;
   } catch (error) {
-    const err = new Error("Failed to get posts list");
+    const err = new Error("Failed to get posts list!");
     throw err;
   }
 };
@@ -17,7 +17,7 @@ export const getPostById = async (id: number) => {
     const { data } = await api.get(`/posts/${id}?_embed=comments`);
     return data;
   } catch (error) {
-    const err = new Error("Failed to get post");
+    const err = new Error("Failed to get post!");
     throw err;
   }
 };

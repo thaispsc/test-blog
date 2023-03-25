@@ -14,8 +14,6 @@ interface FeaturedPostsProps {
 }
 
 const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
-  const firstTwoPosts = posts.slice(0, 2);
-
   return (
     <Box marginY={8}>
       <Typography variant="h1" align="center">
@@ -27,7 +25,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
         display="flex"
         justifyContent="space-between"
       >
-        {firstTwoPosts.map((post) => (
+        {posts.map((post) => (
           <Grid item xs={12} sm={5} key={post.id}>
             <Box
               paddingTop="50%"

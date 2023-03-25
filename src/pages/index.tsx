@@ -5,7 +5,7 @@ import NextError from "@/lib/components/Error";
 
 export const getServerSideProps = async () => {
   try {
-    const posts = await getPosts();
+    const posts = await getPosts(1, 2);
     const users = await getUsers();
     return {
       props: {

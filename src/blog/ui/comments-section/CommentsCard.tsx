@@ -26,7 +26,7 @@ const CommentsCard = ({ comment }: CommentsCardProps) => {
         <Grid item xs={2} display={isMobile ? "none" : "auto"}>
           <UserIcon size={90} />
         </Grid>
-        <Grid item xs={isMobile ? 12 : 10}>
+        <Grid item sm={10}>
           <CardContent>
             <Box display={isMobile ? "auto" : "flex"}>
               <Typography paddingRight={isMobile ? 0 : 2}>

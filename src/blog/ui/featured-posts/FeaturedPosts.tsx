@@ -14,9 +14,6 @@ interface FeaturedPostsProps {
 }
 
 const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
   const firstTwoPosts = posts.slice(0, 2);
 
   return (
@@ -31,7 +28,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
         justifyContent="space-between"
       >
         {firstTwoPosts.map((post) => (
-          <Grid item xs={isMobile ? 12 : 5} key={post.id}>
+          <Grid item xs={12} sm={5} key={post.id}>
             <Box
               paddingTop="50%"
               marginY={2}

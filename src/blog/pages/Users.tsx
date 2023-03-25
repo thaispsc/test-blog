@@ -10,9 +10,6 @@ interface UsersProps {
 }
 
 const Users: NextPage<UsersProps> = ({ users }) => {
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
   return (
     <>
       <Header />
@@ -22,7 +19,7 @@ const Users: NextPage<UsersProps> = ({ users }) => {
         </Typography>
         <Grid container spacing={3} marginTop={2} marginBottom={8}>
           {users.map((user) => (
-            <Grid item xs={isMobile ? 12 : 6} key={user.id}>
+            <Grid item xs={12} sm={6} key={user.id}>
               <UserCard user={user} />
             </Grid>
           ))}

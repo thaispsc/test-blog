@@ -34,7 +34,8 @@ const MeetUsers = ({ users }: MeetUsersProps) => {
         {firstThreeUsers.map((user) => (
           <Grid
             item
-            xs={isMobile ? 12 : 4}
+            xs={12}
+            sm={4}
             marginBottom={isMobile ? 3 : 0}
             textAlign="center"
             key={user.id}

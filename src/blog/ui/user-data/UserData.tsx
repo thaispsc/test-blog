@@ -12,7 +12,7 @@ export const UserData = ({ user }: UserDataProps) => {
 
   return (
     <Grid container display="flex" justifyContent="space-between" marginTop={6}>
-      <Grid item xs={isMobile ? 12 : 4}>
+      <Grid item sm={4}>
         <Box>
           <Typography variant="h2" marginBottom={2}>
             Basic Informations
@@ -42,7 +42,7 @@ export const UserData = ({ user }: UserDataProps) => {
       </Grid>
       <Grid
         item
-        xs={isMobile ? 12 : 4}
+        sm={4}
         display="flex"
         justifyContent={isMobile ? "flex-start" : "center"}
         marginY={isMobile ? 2 : 0}
@@ -77,7 +77,7 @@ export const UserData = ({ user }: UserDataProps) => {
           </Typography>
         </Box>
       </Grid>
-      <Grid item xs={isMobile ? 12 : 4}>
+      <Grid item sm={4}>
         <Typography variant="h2" marginBottom={2}>
           Company
         </Typography>

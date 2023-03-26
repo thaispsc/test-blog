@@ -16,7 +16,7 @@
   - [Cloning the repository](#cloning-the-repository)
   - [Installing the dependencies](#installing-the-dependencies)
   - [Running (development)](#running-development)
-- [🙋‍♀️Author](#-author)
+- [🙋‍♀️ Author](#-author)
 
 <br />
 

@@ -38,7 +38,7 @@ https://test-blog-thaispsc.vercel.app
 <a name="description"></a>
 ## 🧾 Description
 
-**Test for the Front-end job position.**
+**Test for Front-end job position.**
 
 **Goal:** Develop a front-end to a RESTful API. The interface should display posts from a blog and, when clicking on a post, the
 associated comments.

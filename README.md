@@ -15,8 +15,8 @@
 - [🚀 Running the project](#-running-the-project)
   - [Cloning the repository](#cloning-the-repository)
   - [Installing the dependencies](#installing-the-dependencies)
-  - [Running (development)](#running-development)
-- [🙋‍♀️ Author](#-author)
+  - [Running](#running)
+- [👤 Author](#-author)
 
 <br />
 
@@ -35,7 +35,7 @@
 
 **Test for the Front-end job position.**
 
-**Goal:** develop a front-end to a RESTful API. The interface should display posts from a blog and, when clicking on a post, the
+**Goal:** Develop a front-end to a RESTful API. The interface should display posts from a blog and, when clicking on a post, the
 associated comments.
 
 <br />
@@ -81,8 +81,8 @@ gh repo clone thaispsc/test-blog
 ```
 npm install
 ```
-<a name="running-development"></a>
-### Running (development)
+<a name="running"></a>
+### Running
 
 ```
 npm run dev
@@ -93,6 +93,6 @@ Open http://localhost:3000 on your browser to see the project.
 <br />
 
 <a name="author"></a>
-## 🙋‍♀️ Author
+## 👤 Author
 
 [Thais Cavalcante](https://www.linkedin.com/in/thaispcavalcante/)

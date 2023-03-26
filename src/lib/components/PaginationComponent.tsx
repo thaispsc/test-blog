@@ -15,7 +15,7 @@ export const PaginationComponent = ({ page }: PaginationComponentProps) => {
   );
 
   return (
-    <Box marginY={4} display="flex" justifyContent="center">
+    <Box marginY={8} display="flex" justifyContent="center">
       <Stack spacing={2}>
         <Pagination
           count={20}

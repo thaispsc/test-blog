@@ -21,7 +21,7 @@ const Posts: NextPage<PostsProps> = ({ posts, page }) => {
         <Box
           sx={{
             height: {
-              xs: 772,
+              xs: 800,
               sm: 676,
             },
           }}

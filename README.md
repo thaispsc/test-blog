@@ -8,7 +8,7 @@
 ## Table of contents
 
 - [📺 Demo](#-demo)
-- [💻 Site] (#-site)
+- [💻 Site](#-site)
 - [🧾 Description](#-description)
 - [📖 Features](#-features)
 - [🔧 Tech stack](#-tech-stack)

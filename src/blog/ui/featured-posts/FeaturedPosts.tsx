@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Button,
-  Link,
-  useMediaQuery,
-  Theme,
-} from "@mui/material";
+import { Box, Typography, Grid, Button, Link } from "@mui/material";
 
 interface FeaturedPostsProps {
   posts: Post[];

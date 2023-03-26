@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Container,
-  Button,
-  Link,
-  Grid,
-  Theme,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Typography, Container, Button, Link, Grid } from "@mui/material";
 import UserIcon from "@/lib/components/UserIcon";
 
 interface MeetUsersProps {
@@ -17,9 +8,7 @@ interface MeetUsersProps {
 
 const MeetUsers = ({ users }: MeetUsersProps) => {
   const firstThreeUsers = users.slice(0, 3);
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
+
   return (
     <Container maxWidth="md">
       <Typography variant="h1" align="center">
@@ -36,9 +25,13 @@ const MeetUsers = ({ users }: MeetUsersProps) => {
             item
             xs={12}
             sm={4}
-            marginBottom={isMobile ? 3 : 0}
             textAlign="center"
             key={user.id}
+            sx={{
+              "@media (max-width: 600px)": {
+                marginBottom: 3,
+              },
+            }}
           >
             <UserIcon size={90} />
             <Link

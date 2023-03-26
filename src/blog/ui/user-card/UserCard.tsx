@@ -13,13 +13,12 @@ export const UserCard = ({ user }: UserCardProps) => {
         sx={{
           display: "flex",
           alignItems: "center",
-          paddingX: "16px",
           backgroundColor: "info.light",
           "&:hover": {
             boxShadow: "4px 4px 4px 2px rgba(0, 0, 0, 0.2)",
           },
-          "@media (max-width: 900px)": {
-            paddingX: "0",
+          "@media (min-width: 900px)": {
+            paddingX: "16px",
           },
         }}
       >

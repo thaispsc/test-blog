@@ -1,15 +1,11 @@
 import React from "react";
-import { Grid, Box, Typography, Theme, useMediaQuery } from "@mui/material";
+import { Grid, Box, Typography } from "@mui/material";
 
 interface UserDataProps {
   user: User;
 }
 
 export const UserData = ({ user }: UserDataProps) => {
-  const isMobile = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.down("sm")
-  );
-
   return (
     <Grid container display="flex" justifyContent="space-between" marginTop={6}>
       <Grid item sm={4}>
@@ -44,8 +40,12 @@ export const UserData = ({ user }: UserDataProps) => {
         item
         sm={4}
         display="flex"
-        justifyContent={isMobile ? "flex-start" : "center"}
-        marginY={isMobile ? 2 : 0}
+        justifyContent="center"
+        sx={{
+          "@media (max-width: 600px)": {
+            marginY: 2,
+          },
+        }}
       >
         <Box>
           <Typography variant="h2" marginBottom={2}>

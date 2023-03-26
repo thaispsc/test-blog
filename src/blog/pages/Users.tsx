@@ -1,8 +1,7 @@
 import React from "react";
 import { NextPage } from "next";
-import { Grid, Container, Typography, useMediaQuery } from "@mui/material";
+import { Grid, Container, Typography } from "@mui/material";
 import Header from "../ui/header/Header";
-import { Theme } from "@mui/system";
 import UserCard from "../ui/user-card/UserCard";
 
 interface UsersProps {

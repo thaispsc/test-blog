@@ -78,17 +78,23 @@ const Header = () => {
             >
               <MenuItem>
                 <Link href="/" underline="none">
-                  <Typography color="black">Home</Typography>
+                  <Typography color="black" marginX={5}>
+                    HOME
+                  </Typography>
                 </Link>
               </MenuItem>
               <MenuItem>
                 <Link href="/posts/1" underline="none">
-                  <Typography color="black">Posts</Typography>
+                  <Typography color="black" marginX={5}>
+                    POSTS
+                  </Typography>
                 </Link>
               </MenuItem>
               <MenuItem>
                 <Link href="/users" underline="none">
-                  <Typography color="black">Users</Typography>
+                  <Typography color="black" marginX={5}>
+                    USERS
+                  </Typography>
                 </Link>
               </MenuItem>
             </Menu>

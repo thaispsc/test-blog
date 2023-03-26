@@ -15,7 +15,7 @@ const CommentsCard = ({ comment }: CommentsCardProps) => {
   return (
     <Card
       variant="outlined"
-      sx={{ marginY: "16px", backgroundColor: "#EDEDED" }}
+      sx={{ marginY: "16px", backgroundColor: "info.light" }}
     >
       <Grid
         container
@@ -35,7 +35,7 @@ const CommentsCard = ({ comment }: CommentsCardProps) => {
               <Typography
                 paddingLeft={isMobile ? 0 : 2}
                 borderLeft={isMobile ? 0 : 2}
-                borderColor="#bababa"
+                borderColor="info.main"
               >
                 {comment.email}
               </Typography>

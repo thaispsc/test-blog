@@ -14,7 +14,7 @@ export const UserCard = ({ user }: UserCardProps) => {
           display: "flex",
           alignItems: "center",
           paddingX: "16px",
-          backgroundColor: "#EDEDED",
+          backgroundColor: "info.light",
           "&:hover": {
             boxShadow: "4px 4px 4px 2px rgba(0, 0, 0, 0.2)",
           },

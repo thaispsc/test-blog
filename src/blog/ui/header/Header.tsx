@@ -121,7 +121,7 @@ const Header = () => {
                     variant="body1"
                     sx={{
                       "&:hover": {
-                        color: "#bababa",
+                        color: "info.main",
                       },
                     }}
                   >

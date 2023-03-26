@@ -47,7 +47,7 @@ const MeetUsers = ({ users }: MeetUsersProps) => {
               underline="none"
               sx={{
                 "&:hover": {
-                  color: "#838383",
+                  color: "info.dark",
                 },
               }}
             >

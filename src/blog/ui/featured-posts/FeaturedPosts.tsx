@@ -30,7 +30,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
             <Box
               paddingTop="50%"
               marginY={2}
-              sx={{ backgroundColor: "#bababa" }}
+              sx={{ backgroundColor: "info.main" }}
             ></Box>
             <Typography variant="h2" marginTop={2} align="center">
               {post.title}
@@ -39,7 +39,7 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
         ))}
       </Grid>
       <Box display="flex" justifyContent="center" marginTop={4}>
-        <Button variant="contained" color="info">
+        <Button variant="contained" sx={{ backgroundColor: "info.light" }}>
           <Link href="/posts/1" underline="none">
             <Typography
               color="secondary"

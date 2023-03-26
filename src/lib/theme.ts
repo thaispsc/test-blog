@@ -12,7 +12,9 @@ const theme = createTheme({
       main: "#000000",
     },
     info: {
-      main: "#ededed",
+      light: "#EDEDED",
+      main: "#BABABA",
+      dark: "#838383",
     },
   },
   typography: {

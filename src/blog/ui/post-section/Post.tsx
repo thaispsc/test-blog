@@ -18,7 +18,7 @@ export const PostSection = ({ post, user }: PostSectionProps) => {
         color="secondary"
         sx={{
           "&:hover": {
-            color: "#838383",
+            color: "info.dark",
           },
         }}
       >
@@ -29,7 +29,7 @@ export const PostSection = ({ post, user }: PostSectionProps) => {
       <Box
         paddingTop="50%"
         marginY={2}
-        sx={{ backgroundColor: "#bababa" }}
+        sx={{ backgroundColor: "info.main" }}
       ></Box>
       <Typography>{post.body}</Typography>
     </Box>

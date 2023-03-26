@@ -19,7 +19,7 @@ const Blog: NextPage<BlogProps> = ({ posts, users }) => {
       <Container maxWidth="md">
         <Slogan />
       </Container>
-      <Box paddingY={8} sx={{ backgroundColor: "#EDEDED" }}>
+      <Box paddingY={8} sx={{ backgroundColor: "info.light" }}>
         <MeetUsers users={users} />
       </Box>
       <Container maxWidth="md">

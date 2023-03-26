@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Typography, Card, CardContent, Link } from "@mui/material";
 import UserIcon from "../../../lib/components/UserIcon";
 

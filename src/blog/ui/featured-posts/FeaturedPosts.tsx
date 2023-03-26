@@ -19,14 +19,20 @@ const FeaturedPosts = ({ posts }: FeaturedPostsProps) => {
       >
         {posts.map((post) => (
           <Grid item xs={12} sm={5} key={post.id}>
-            <Box
-              paddingTop="50%"
-              marginY={2}
-              sx={{ backgroundColor: "info.main" }}
-            ></Box>
-            <Typography variant="h2" marginTop={2} align="center">
-              {post.title}
-            </Typography>
+            <Link
+              href={`/posts/post/${post.id}`}
+              color="secondary"
+              underline="none"
+            >
+              <Box
+                paddingTop="50%"
+                marginY={2}
+                sx={{ backgroundColor: "info.main" }}
+              ></Box>
+              <Typography variant="h2" marginTop={2} align="center">
+                {post.title}
+              </Typography>
+            </Link>
           </Grid>
         ))}
       </Grid>
